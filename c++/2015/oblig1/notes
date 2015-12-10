@@ -1,0 +1,2 @@
+In C++, object variables hold object values. This is different from Java, where an object variable only is a reference to an object value that is stored elsewhere.
+ There are circumstances where the same arrangement is required in C++. In C++, a variable that can refer to an object is called a pointer. If T is any type, then T* is a pointer to an object of type T. 
