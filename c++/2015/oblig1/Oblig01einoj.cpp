@@ -70,9 +70,13 @@ class Oblig01einojo
 
       Mus *m1 = new Mus(37, false);
       m1->sjekktilstand("A", "musNr1", false, 37, true);
+      free(m1);
+      m1 = NULL;
       //              (testid, navn, syk, vekt, lever) 
       Mus *m2 = new Mus(38, true);
       m2->sjekktilstand("B", "musNr2", true, 38, true);
+      free(m2);
+      m2 = NULL;
 
       Bol<Mus> *musebolet = new Bol<Mus>();
       testMusebol(musebolet, "P");
@@ -120,6 +124,7 @@ class Oblig01einojo
           }
       }
       delete mm;
+      mm = NULL;
 
       // Så tester vi at Pus nå er mett, og at musa er blitt syk etter
       // å ha blitt bitt...
@@ -166,6 +171,10 @@ class Oblig01einojo
       testOmSomForventet("Jerrys antall mus i magen", to_string(jerry->antMus()), "1");
       mm = jerry->gaaPaaJaktI(musebolet);
       testOmSomForventet("Jerrys antall mus i magen", to_string(jerry->antMus()), "1");
+      delete  mm;
+      delete musebolet;
+      mm = NULL;
+      musebolet = NULL;
 
       cout << "============= Tester Pus:" << endl;
       testOmSomForventet("kattens navn", pus->navn(), "Pus");
@@ -179,11 +188,20 @@ class Oblig01einojo
       testOmSomForventet("antall mus i magen", to_string(pus->antMus()), "2");
       testOmSomForventet("om katten er syk", bool_to_string(mons->syk()), "true");
 
+      delete pus;
+      pus = NULL;
+      delete mons;
+      mons = NULL;
+
       cout << "============= Tester Jerry:" << endl;
       testOmSomForventet("kattens navn", jerry->navn(), "Jerry");
       testOmSomForventet("kattens vekt", to_string(jerry->vekt()), "5045");
       testOmSomForventet("antall mus i magen", to_string(jerry->antMus()), "1");
       testOmSomForventet("om katten er syk", bool_to_string(jerry->syk()), "true");
+
+      delete jerry;
+      jerry = NULL;
+
     }	
 	
 	
@@ -192,6 +210,8 @@ class Oblig01einojo
 int main(void) {
     Oblig01einojo *o1 = new Oblig01einojo(); 
     o1->hovedprogram();
+    free(o1);
+    o1 = NULL;
 }
  
 
