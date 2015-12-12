@@ -57,13 +57,13 @@ int main(void) {
   testBoolean("tom() paa tom mengde returnerer true", true, tomMengde->tom());
   //      beskrivelse          forventet returverdi, det vi tester
   delete tomMengde;
+  tomMengde = NULL;
 
-  string *str = new string("Hei");
-//  Mengde<string> *litenMengde = new Mengde<string>();
-//  litenMengde->leggTil(str);
-//  testBoolean("tom() paa ikke-tom mengde returnerer false", false, litenMengde->tom());
-//
-  Mengde<int> tallMengde;
+  Mengde<string> *litenMengde = new Mengde<string>();
+  litenMengde->leggTil("Hei");
+  testBoolean("tom() paa ikke-tom mengde returnerer false", false, litenMengde->tom()); 
+
+  Mengde<int> tallmengde = new Mengde<int>();
   int *en = new int;
   *en = 1;
   testBoolean("inneholder() paa en tom mengde skal returnere false", false, tallMengde.inneholder<int>(en));
