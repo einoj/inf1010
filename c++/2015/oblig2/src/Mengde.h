@@ -8,6 +8,16 @@ template <class E> class Mengde
       head = NULL;
     }
 
+    bool inneholder(E e) {
+      Node* temp = head;
+      while (temp->next) {
+        if (temp->e == e)
+          return true;
+        temp = temp->next;
+      }
+      return false;
+    }
+
     bool tom() {
       if (head)
         return false;
@@ -47,15 +57,6 @@ template <class E> class Mengde
       return r;
     }
 
-    bool inneholder(E* e) {
-      Node* temp = head;
-      while (temp->next) {
-        if (temp->e == e)
-          return true;
-        temp = temp->next;
-      }
-      return false;
-    }
 
   private:
     class Node

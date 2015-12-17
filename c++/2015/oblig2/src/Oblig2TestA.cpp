@@ -63,10 +63,10 @@ int main(void) {
   litenMengde->leggTil("Hei");
   testBoolean("tom() paa ikke-tom mengde returnerer false", false, litenMengde->tom()); 
 
-  Mengde<int> tallmengde = new Mengde<int>();
+  Mengde<int> *tallMengde = new Mengde<int>();
   int *en = new int;
   *en = 1;
-  testBoolean("inneholder() paa en tom mengde skal returnere false", false, tallMengde.inneholder<int>(en));
+  testBoolean("inneholder() paa en tom mengde skal returnere false", false, tallMengde->inneholder(*en));
 //  testBoolean("leggTil() med et nytt element skal returnere true", true, tallMengde.leggTil(en));
 //  tallMengde.leggTil(2);
 //  Integer tre = 3;
