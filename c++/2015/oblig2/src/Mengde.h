@@ -9,8 +9,9 @@ template <class E> class Mengde
     }
 
     bool inneholder(E e) {
+      cout << "loop "<< endl;
       Node* temp = head;
-      while (temp->next) {
+      while (temp!=NULL) {
         if (temp->e == e)
           return true;
         temp = temp->next;
@@ -28,6 +29,7 @@ template <class E> class Mengde
     bool leggTil(E e) {
       if (inneholder(e))
         return false;
+      cout << "inneholder ikke " << endl;
       Node* temp = head;
       while (temp) {
         temp = temp->next;

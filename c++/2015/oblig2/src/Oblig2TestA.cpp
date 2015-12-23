@@ -58,9 +58,9 @@ int main(void) {
   //      beskrivelse          forventet returverdi, det vi tester
   delete tomMengde;
   tomMengde = NULL;
-  cout << "Test4" << endl;
 
   Mengde<string> *litenMengde = new Mengde<string>();
+  cout << "Test4" << endl;
   litenMengde->leggTil("Hei");
   cout << "Test3" << endl;
   testBoolean("tom() paa ikke-tom mengde returnerer false", false, litenMengde->tom()); 
