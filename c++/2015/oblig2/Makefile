@@ -9,3 +9,5 @@ all:
 	mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) $(SRCS) -o $(BINDIR)oblig2
 
+clean:
+	rm -r $(BINDIR)
